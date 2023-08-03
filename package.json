@@ -1,0 +1,27 @@
+{
+  "name": "@webcoader/jsonfiledb",
+  "version": "1.0.0",
+  "description": "jsonFileDB is a lightweight and flexible database library that provides simple yet powerful functionality for managing and interacting with JSON-based storage files. It allows users to create and manage databases in a folder, define multiple storage files within those databases, and perform CRUD (Create, Read, Update, Delete) operations on data. The module offers methods for inserting, retrieving, updating, and deleting records, making it easy to build small data-driven applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wEbCoAdEr/jsonFileDB.git"
+  },
+  "keywords": [
+    "jsonfiledb",
+    "json",
+    "database",
+    "file",
+    "db",
+    "lite"
+  ],
+  "author": "wEbCoAdEr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wEbCoAdEr/jsonFileDB/issues"
+  },
+  "homepage": "https://github.com/wEbCoAdEr/jsonFileDB#readme"
+}
