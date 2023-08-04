@@ -44,10 +44,9 @@ class jsonFileDB {
   constructor(dbName, dbPath = "") {
     // Get the absolute path of the current module
     const appRoot = path.resolve(__dirname, "../../../");
-    console.log(appRoot);
 
     // Combine the absolute path with the database name and path
-    this.dbPath = path.join(appRoot, dbPath, dbName);
+    this.dbPath = dbPath === "" ? path.join(appRoot, dbName) : dbPath;
 
     // Ensure that the database folder exists, create it if it doesn't
     this.createDatabaseFolder();
@@ -237,6 +236,6 @@ class jsonFileDB {
   }
 }
 
-module.exports = function createdbLite(dbName, dbPath) {
+module.exports = (dbName, dbPath) => {
   return new jsonFileDB(dbName, dbPath);
 };
