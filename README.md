@@ -33,15 +33,12 @@ const createJsonFileDB = require("@webcoader/jsonfiledb");
 
 async function main() {
   // Create a new jsonFileDB instance
-
   const db = createJsonFileDB("my_database");
 
   // Set the storage to "users"
-
   db.setStorage("users");
 
   // Insert a new user
-
   const newUser = await db.insert({
     name: "John Doe",
 
@@ -53,19 +50,16 @@ async function main() {
   console.log("New User Inserted:", newUser);
 
   // Find records based on query
-
   const foundUsers = await db.find({ age: 28 });
 
   console.log("Found Users:", foundUsers);
 
   // Update records based on query
-
   const updatedUser = await db.update({ name: "John Doe" }, { age: 29 });
 
   console.log("Updated User:", updatedUser);
 
   // Delete records based on query
-
   const deletedUsers = await db.delete({ age: 29 });
 
   console.log("Deleted Users:", deletedUsers);

@@ -100,11 +100,7 @@ class jsonFileDB {
       const jsonData = JSON.stringify(data);
 
       // Write the updated data to the storage file
-      fs.writeFile(this.storagePath, jsonData, (err) => {
-        if (err) {
-          throw new Error(err);
-        }
-      });
+      fs.writeFileSync(this.storagePath, jsonData);
 
       return insertData;
     } catch (err) {
@@ -135,18 +131,9 @@ class jsonFileDB {
     if (storage !== "") {
       this.setStorage(storage);
     }
-
     try {
-      const data = await new Promise((resolve, reject) => {
-        fs.readFile(this.storagePath, "utf8", (err, content) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve(content);
-          }
-        });
-      });
-
+      const data = fs.readFileSync(this.storagePath, "utf8");
+      fs.close(fs.openSync(this.storagePath, "r"));
       this.storageData = JSON.parse(data);
       return this.storageData;
     } catch (err) {
